@@ -5,7 +5,7 @@
 // @author       JuMaHo
 // @include      *://www.leitstellenspiel.de/
 // @grant        none
-// @namespace https://greasyfork.org/users/180949
+// @namespace 	 https://github.com/JuMaH0/lss/raw/master/missionsh.user.js
 // ==/UserScript==
 
 (function() {
