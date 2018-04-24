@@ -23,9 +23,9 @@
         }else if(sls > 0){
             position = 'Saarlouis';
         }else if(sb > 0){
-            alert('Saarbrücken');
+           position = 'Saarbrücken';
         }else if(dil > 0){
-            alert('Dillingen');
+            position = 'Dillingen';
         }
 
         const jumpNext = false; // Set to 'true', to jump to next mission after submitting an alert.
