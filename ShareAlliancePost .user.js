@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         ShareAlliancePost
 // @namespace    Leitstellenspiel
-// @version      3.2.0
-// @author       jalibu, JuMaHo
+// @version      3.2.1
+// @author       jalibu,JuMaHo
 // @include      https://www.leitstellenspiel.de/missions/*
 // ==/UserScript==
 
