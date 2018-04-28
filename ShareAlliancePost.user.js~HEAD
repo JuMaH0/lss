@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         ShareAlliancePost
 // @namespace    Leitstellenspiel
-// @version      3.2.1
-// @author       jalibu,JuMaHo
+// @version      3.2.2
+// @author       jalibu, JuMaHo
 // @include      https://www.leitstellenspiel.de/missions/*
 // ==/UserScript==
 
@@ -131,13 +131,11 @@
 
 
             // Adds needed vehicles to selection
+            var unitsRequired = 'Keine weiteren Einheiten benötigt';
             if ( $(".alert-danger").length > 0 ) {
                 var unitsRequiredRow = document.getElementsByClassName('alert-danger')[0].innerHTML;
-                var unitsRequireda = unitsRequiredRow;
-                var unitsRequired = unitsRequireda.substr(7, unitsRequireda.length-1);
-            } else {
-                var unitsRequired = 'Keine weiteren Einheiten benötigt';
-            }
+                unitsRequired = unitsRequiredRow.substr(7, unitsRequiredRow.length-1);
+            } 
 
 
             // Prepare values for %MY_CUSTOM_TIME%
