@@ -2,7 +2,7 @@
 // @name         MissionFilter
 // @namespace    http://tampermonkey.net/
 // @version      1.0
-// @description  try to take over the world!
+// @description  Missionen Filtern
 // @author       JuMaHo
 // @match        https://www.leitstellenspiel.de/
 // @grant        none
@@ -12,9 +12,7 @@
     'use strict';
 
     var circle = 'width: 20px; height: 20px; border: 1px solid black; text-align: center; border-radius: 20px;';
-
     $(".navbar-right").append('<li><a id="black"><div id="black_circle" style="background-color: black;' + circle + '"></div></a></li>');
-
 
     $("#black").click(function() {
 
@@ -33,9 +31,9 @@
 
             for (x = 0; x < count_missions; x++) {
 
-                mission_id = $(strainer[x]).attr('id').match(/[0-9]+/);//auslesen der Mission ID
-                var cull = document.getElementById('mission_caption_'+mission_id+'').innerHTML;//Missionsname auslesen
-                var present = cull.indexOf(mission[0]);//prüfen der mission
+                mission_id = $(strainer[x]).attr('id').match(/[0-9]+/);
+                var cull = document.getElementById('mission_caption_'+mission_id+'').innerHTML;
+                var present = cull.indexOf(mission[0]);
 
                 for (y = 0; y < count_missions; y++) {
                     if(present > -1){
@@ -51,4 +49,5 @@
         }
     });
 
-})();
+})
+();
