@@ -18,7 +18,7 @@
 
         if($('#black_circle').css('background-color') == 'rgb(0, 0, 0)'){
             $("#black_circle").css({ 'background-color':'grey'});
-		}
+		} 
 
 
             var mission = ["Flächenbrand","Taschendiebstahl","Brennender Bus","Person im Aufzug"];
