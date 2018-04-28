@@ -16,9 +16,12 @@
 
     $("#black").click(function() {
 
-        $("#black_circle").css({ 'background-color':'grey'});
+        if($('#black_circle').css('background-color') == 'rgb(0, 0, 0)'){
+            $("#black_circle").css({ 'background-color':'grey'});
+		}
 
-var mission = ["Flächenbrand","Taschendiebstahl","Brennender Bus","Person im Aufzug"];
+
+            var mission = ["Flächenbrand","Taschendiebstahl","Brennender Bus","Person im Aufzug"];
             var mission_count = mission.length;
             var count_missions = $(".missionSideBarEntry").length;
             var strainer = $('[id^=mission_caption_]');
