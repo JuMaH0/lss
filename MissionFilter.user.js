@@ -36,7 +36,7 @@
         for (x = 0; x < count_missions; x++) {
 
             mission_id = $(strainer[x]).attr('id').match(/[0-9]+/);
-            var cull = document.getElementById('mission_caption_'+mission_id+'').innerHTML;
+            var cull = document.getElementById('mission_caption_' + mission_id + '').innerHTML;
             var present = cull.indexOf(mission[0]);
 
             for (y = 0; y < count_missions; y++){
