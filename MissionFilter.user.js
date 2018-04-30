@@ -18,7 +18,7 @@
     var x;
     var y;
 
-    $(".navbar-right").append('<li><a id="black"><div id="black_circle" style="background-color: black;' + circle + '"></div></a></li>');
+    $(".navbar-right").append('<li><a id="black"><div id="black_circle" style="background-color: black;' + circle + '"><span id="filter" class="glyphicon glyphicon-fire"></span></div></a></li>');
 
     $("#black").click(function() {
         if($('#black_circle').css('background-color') == 'rgb(0, 0, 0)'){
