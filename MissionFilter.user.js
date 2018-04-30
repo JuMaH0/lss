@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MissionFilter
 // @namespace    Leitstellenspiel
-// @version      1.3
+// @version      1.4
 // @description  filter missions by name
 // @author       JuMaHo
 // @match        https://www.leitstellenspiel.de/
