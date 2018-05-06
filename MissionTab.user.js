@@ -4,7 +4,6 @@
 // @description  changes tabname to missionname
 // @author       JuMaHo
 // @match        https://www.leitstellenspiel.de/missions/*
-// @grant        none
 // ==/UserScript==
 
 (function() {
