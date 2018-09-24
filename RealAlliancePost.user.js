@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         ShareAlliancePost
+// @name         RealAlliancePost
 // @namespace    Leitstellenspiel
 // @version      3.4.0
 // @author       jalibu, JuMaHo
@@ -20,10 +20,7 @@
                       'Rettungsdienst für %PATIENTS_LEFT% Patienten benötigt!',
                       'Unterstützung in %ADDRESS% benötigt!',
 					  'Keine weiteren Fahrzeuge benötigt!',
-					  'Verstärkung benötigt!',
-                      
-                      
-                      '%REQUIRED_VEHICLES%'];
+					  'Verstärkung benötigt!'];
 
     // Create Button and add event listener
     const initButtons = () => {
@@ -149,7 +146,7 @@
             const patientsLeft = addressAndPatrientRow.length === 2 ? addressAndPatrientRow[1] : 0;
 
             // Prepare values for %MY_CUSTOM_TIME%
-            const offsetInHours = 3;
+            const offsetInHours = 2;
             let customTime = new Date().getHours() + offsetInHours;
             customTime = customTime > 24 ? customTime -24 : customTime;
 
