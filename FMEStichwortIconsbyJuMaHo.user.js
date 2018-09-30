@@ -15,5 +15,4 @@
     function buttonsize() {
         $(".mission_vehicle_state").css({ 'min-width': '30px', 'min-height': '42px'  });
 }
-    // Your code here...
-})();
+   })();
