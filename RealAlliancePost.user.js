@@ -11,14 +11,14 @@
 
     const jumpNext = false; // Set to 'true', to jump to next mission after submitting an alert.
     const enableKeyboard = true; // Set to 'false', to disable keyboard shortcuts.
-    const shortcutKeys = [17, 68]; // 17 = ctrl, 68 = d
+    const shortcutKeys = [17, 86]; // 17 = ctrl, 86 = v
     const defaultPostToChat = true; // Set to 'false', to disable default post in alliance chat.
     const messages = ['Zum Mitverdienen!',// First entry is default
 					  'Keine ELW1/ELW2!',
-				      'Ich brauche noch Fahrzeuge bitte!',	
+				          'Ich brauche noch Fahrzeuge bitte!',	
 					  'Offen bis %MY_CUSTOM_TIME%!',
-                      'Rettungsdienst für %PATIENTS_LEFT% Patienten benötigt!',
-                      'Unterstützung in %ADDRESS% benötigt!',
+                      		 	  'Rettungsdienst für %PATIENTS_LEFT% Patienten benötigt!',
+                                          'Unterstützung in %ADDRESS% benötigt!',
 					  'Keine weiteren Fahrzeuge benötigt!',
 					  'Verstärkung benötigt!'];
 
