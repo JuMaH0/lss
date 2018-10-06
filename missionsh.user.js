@@ -8,7 +8,7 @@
 // @namespace      https://github.com/JuMaH0/lss/raw/master/missionsh.user.js
 // ==/UserScript==
 (function() {
-    var only_list = 0; //1= liste und Map ausblenden 0= nur liste ausblenden
+    var only_list = 0; //0= liste und Map ausblenden 1= nur liste ausblenden
     const colors = {
         "green": "rgb(50, 205, 50)",
         "yellow": "rgb(254, 220, 50)",
