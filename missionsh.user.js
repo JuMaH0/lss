@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MissionSH
-// @version      1.5
+// @version      1.5.1
 // @description  Einsätze anzeigen oder ausblenden anhand der Labelfarben grün, gelb, rot
 // @author       JuMaHo & Jan (KBOE2)
 // @include      *://www.leitstellenspiel.de/
@@ -8,6 +8,7 @@
 // @namespace      https://github.com/JuMaH0/lss/raw/master/missionsh.user.js
 // ==/UserScript==
 (function() {
+    var only_list = 0; //1= liste und Map ausblenden 0= nur liste ausblenden
     const colors = {
         "green": "rgb(50, 205, 50)",
         "yellow": "rgb(254, 220, 50)",
@@ -28,7 +29,7 @@
     }, 20000);
     $('.switchMissionStateView').click(function() {
         $(this).children().attr('status') === "enabled" ? $(".mission_panel_" + this.id).parent().hide() : $(".mission_panel_" + this.id).parent().show();
-        $('#' + this.id + '_circle').attr('status') === "enabled" ? $(".leaflet-interactive[src*='" + this.id + "_images']").hide() : $(".leaflet-interactive[src*='" + this.id + "_images']").show();
+        if(only_list === 0){$('#' + this.id + '_circle').attr('status') === "enabled" ? $(".leaflet-interactive[src*='" + this.id + "_images']").hide() : $(".leaflet-interactive[src*='" + this.id + "_images']").show();}
         $(this).children().attr('status') === "enabled" ? $(this).children().attr('status', 'disabled') : $(this).children().attr('status', 'enabled');
     });
 })();
