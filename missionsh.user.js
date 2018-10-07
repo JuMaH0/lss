@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MissionSH
-// @version      1.5.3
+// @version      1.5.4
 // @description  Einsätze anzeigen oder ausblenden anhand der Labelfarben grün, gelb, rot
 // @author       JuMaHo & Jan (KBOE2)
 // @include      *://www.leitstellenspiel.de/
@@ -29,8 +29,8 @@
         });
     }, 20000);
     $('.switchMissionStateView').click(function() {
-        if((hidden_at === 0 || hidden_at === 1) && !$('.mission_panel_' + color).parent().hasClass('finished')){$(this).children().attr('status') === "enabled" ? $(".mission_panel_" + this.id).parent().hide() : $(".mission_panel_" + this.id).parent().show();}
-        if((hidden_at === 0 || hidden_at === 2) && !$('.mission_panel_' + color).parent().hasClass('finished')){$('#' + this.id + '_circle').attr('status') === "enabled" ? $(".leaflet-interactive[src*='" + this.id + "_images']").hide() : $(".leaflet-interactive[src*='" + this.id + "_images']").show();}
+        if((hidden_at === 0 || hidden_at === 1) && !$('.mission_panel_' + this.id).parent().hasClass('finished')){$(this).children().attr('status') === "enabled" ? $(".mission_panel_" + this.id).parent().hide() : $(".mission_panel_" + this.id).parent().show();}
+        if((hidden_at === 0 || hidden_at === 2) && !$('.mission_panel_' + this.id).parent().hasClass('finished')){$('#' + this.id + '_circle').attr('status') === "enabled" ? $(".leaflet-interactive[src*='" + this.id + "_images']").hide() : $(".leaflet-interactive[src*='" + this.id + "_images']").show();}
         $(this).children().attr('status') === "enabled" ? $(this).children().attr('status', 'disabled') : $(this).children().attr('status', 'enabled');
     });
 })();
