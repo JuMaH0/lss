@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MissionSH
-// @version      1.5.4
+// @version      1.5.5
 // @description  Einsätze anzeigen oder ausblenden anhand der Labelfarben grün, gelb, rot
 // @author       JuMaHo & Jan (KBOE2)
 // @include      *://www.leitstellenspiel.de/
