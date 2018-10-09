@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MissionSH
-// @version      1.6.0
+// @version      1.6.1
 // @description  Einsätze anzeigen oder ausblenden anhand der Labelfarben grün, gelb, rot
 // @author       JuMaHo
 // @include      *://www.leitstellenspiel.de/
@@ -30,29 +30,35 @@
         if(status_green === 'rgb(211, 211, 211)')
         {
             $(".mission_panel_green").css({ 'display': "none" });
+            $(".leaflet-interactive[src*='green_images']").hide();
 
         }
         else
         {
             $(".mission_panel_green").css({ 'display': "block" });
+            $(".leaflet-interactive[src*='green_images']").show();
         }
         if(status_yellow === 'rgb(211, 211, 211)')
         {
             $(".mission_panel_yellow").css({ 'display': "none" });
+            $(".leaflet-interactive[src*='yellow_images']").hide();
 
         }
         else
         {
             $(".mission_panel_yellow").css({ 'display': "block" });
+            $(".leaflet-interactive[src*='yellow_images']").show();
         }
         if(status_red === 'rgb(211, 211, 211)')
         {
             $(".mission_panel_red").css({ 'display': "none" });
+            $(".leaflet-interactive[src*='red_images']").hide();
 
         }
         else
         {
             $(".mission_panel_red").css({ 'display': "block" });
+            $(".leaflet-interactive[src*='red_images']").show();
         }
     }
     $("#green").click(function() {
