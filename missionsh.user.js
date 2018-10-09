@@ -23,14 +23,14 @@
 	setInterval(function(){
 		$('.circle').each(function() {
 			let color = $(this).attr("color");
-			if((hidden_at === 0 || hidden_at === 1) && !$('.mission_panel_' + color).parent().hasClass('finished')){$('#' + color + '_circle').attr('status') === "enabled" ? $('.mission_panel_' + color).parent().show() : $('.mission_panel_' + color).parent().hide();}
-			if((hidden_at === 0 || hidden_at === 2) && !$('.mission_panel_' + color).parent().hasClass('finished')){$('#' + color + '_circle').attr('status') === "enabled" ? $(".leaflet-interactive[src*='" + color + "_images']").show() : $(".leaflet-interactive[src*='" + color + "_images']").hide();}
+			if((hidden_at === 0 || hidden_at === 1) && !$('.mission_panel_' + color).find('.progress-bar-success')){$('#' + color + '_circle').attr('status') === "enabled" ? $('.mission_panel_' + color).parent().show() : $('.mission_panel_' + color).parent().hide();}
+			if((hidden_at === 0 || hidden_at === 2) && !$('.mission_panel_' + color).find('.progress-bar-success')){$('#' + color + '_circle').attr('status') === "enabled" ? $(".leaflet-interactive[src*='" + color + "_images']").show() : $(".leaflet-interactive[src*='" + color + "_images']").hide();}
 		});
 		missionMarkerDistanceUpdate();
 	}, 20000);
 	$('.switchMissionStateView').click(function() {
-		if((hidden_at === 0 || hidden_at === 1) && !$('.mission_panel_' + this.id).parent().hasClass('finished')){$(this).children().attr('status') === "enabled" ? $(".mission_panel_" + this.id).parent().hide() : $(".mission_panel_" + this.id).parent().show();}
-		if((hidden_at === 0 || hidden_at === 2) && !$('.mission_panel_' + this.id).parent().hasClass('finished')){$('#' + this.id + '_circle').attr('status') === "enabled" ? $(".leaflet-interactive[src*='" + this.id + "_images']").hide() : $(".leaflet-interactive[src*='" + this.id + "_images']").show();}
+		if((hidden_at === 0 || hidden_at === 1) && !$('.mission_panel_' + this.id).find('.progress-bar-success')){$(this).children().attr('status') === "enabled" ? $(".mission_panel_" + this.id).parent().hide() : $(".mission_panel_" + this.id).parent().show();}
+		if((hidden_at === 0 || hidden_at === 2) && !$('.mission_panel_' + this.id).find('.progress-bar-success')){$('#' + this.id + '_circle').attr('status') === "enabled" ? $(".leaflet-interactive[src*='" + this.id + "_images']").hide() : $(".leaflet-interactive[src*='" + this.id + "_images']").show();}
 		$(this).children().attr('status') === "enabled" ? $(this).children().attr('status', 'disabled') : $(this).children().attr('status', 'enabled');
 		missionMarkerDistanceUpdate();
 	});
