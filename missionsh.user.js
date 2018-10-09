@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MissionSH
-// @version      1.5.5
+// @version      1.5.8
 // @description  Einsätze anzeigen oder ausblenden anhand der Labelfarben grün, gelb, rot
 // @author       JuMaHo & Jan (KBOE2)
 // @include      *://www.leitstellenspiel.de/
@@ -20,8 +20,6 @@
 		$('head').append('<style>.circle.circle-' + color + '[status="disabled"]{ background: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' version=\'1.1\' preserveAspectRatio=\'none\' viewBox=\'0 0 100 100\' style=\'background-color: ' + code + ';\'><path d=\'M100 0 L0 100\' stroke=\'black\' stroke-width=\'1\'/><path d=\'M0 0 L100 100\' stroke=\'black\' stroke-width=\'2\'/></svg>");\nbackground-repeat:no-repeat;\nbackground-position:center center;\nbackground-size: 100% 100%, auto;}</style>');
 		$(".navbar-right").append('<li><a id="' + color + '" class="switchMissionStateView"><div id="' + color + '_circle" class="circle circle-' + color + '" status="enabled" color="' + color + '"></div></a></li>');
 	});
-	let missionDeleteOrigin = missionDelete;
-	missionDelete=function(e){missionDeleteOrigin(e),$("#mission_"+e).addClass("finished")};
 	setInterval(function(){
 		$('.circle').each(function() {
 			let color = $(this).attr("color");
