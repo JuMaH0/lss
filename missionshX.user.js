@@ -31,34 +31,41 @@
         {
             $(".mission_panel_green").css({ 'display': "none" });
             $(".leaflet-interactive[src*='green_images']").hide();
+			$(".leaflet-interactive[src*='gruen']").hide();
 
         }
         else
         {
             $(".mission_panel_green").css({ 'display': "block" });
             $(".leaflet-interactive[src*='green_images']").show();
+			$(".leaflet-interactive[src*='gruen']").show();
         }
         if(status_yellow === 'rgb(211, 211, 211)')
         {
             $(".mission_panel_yellow").css({ 'display': "none" });
             $(".leaflet-interactive[src*='yellow_images']").hide();
+			$(".leaflet-interactive[src*='gelb']").hide();
 
         }
         else
         {
             $(".mission_panel_yellow").css({ 'display': "block" });
             $(".leaflet-interactive[src*='yellow_images']").show();
+			$(".leaflet-interactive[src*='gelb']").show();
         }
         if(status_red === 'rgb(211, 211, 211)')
         {
             $(".mission_panel_red").css({ 'display': "none" });
             $(".leaflet-interactive[src*='red_images']").hide();
+			$(".leaflet-interactive[src*='rot']").hide();
+			
 
         }
         else
         {
             $(".mission_panel_red").css({ 'display': "block" });
             $(".leaflet-interactive[src*='red_images']").show();
+			$(".leaflet-interactive[src*='rot']").show();
         }
     }
     $("#green").click(function() {
