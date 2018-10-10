@@ -1,9 +1,8 @@
 // ==UserScript==
 // @name         AAO Config Lite
-// @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  AAO Config Lite
-// @author       You
+// @author       JuMaHo
 // @include      *://www.leitstellenspiel.de/
 // @include      *://www.leitstellenspiel.de/*
 // @include      *://www.leitstellenspiel.de/leitstellenansicht
