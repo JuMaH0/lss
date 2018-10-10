@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MissionSH
-// @version      1.6.1
+// @version      1.6.7
 // @description  Einsätze anzeigen oder ausblenden anhand der Labelfarben grün, gelb, rot
 // @author       JuMaHo & Jan (KBOE2)
 // @include      *://www.leitstellenspiel.de/
@@ -67,12 +67,14 @@
             $(".mission_panel_green").css({ 'display':'none'});
             $("#green_circle").css({ 'background-color':'#D3D3D3'});
             $(".leaflet-interactive[src*='green_images']").hide();
+            $(".leaflet-interactive[src*='gruen']").hide();
         }
         else
         {
             $(".mission_panel_green").css({ 'display':'block'});
             $("#green_circle").css({ 'background-color':'#32cd32'});
             $(".leaflet-interactive[src*='green_images']").show();
+            $(".leaflet-interactive[src*='gruen']").show();
         }
     });
     $("#yellow").click(function() {
@@ -81,12 +83,14 @@
             $(".mission_panel_yellow").css({ 'display':'none'});
             $("#yellow_circle").css({ 'background-color':'#D3D3D3'});
             $(".leaflet-interactive[src*='yellow_images']").hide();
+            $(".leaflet-interactive[src*='gelb']").hide();
         }
         else
         {
             $(".mission_panel_yellow").css({ 'display':'block'});
             $("#yellow_circle").css({ 'background-color':'#fedc32'});
             $(".leaflet-interactive[src*='yellow_images']").show();
+            $(".leaflet-interactive[src*='gelb']").show();
         }
     });
     $("#red").click(function() {
@@ -95,12 +99,14 @@
             $(".mission_panel_red").css({ 'display':'none'});
             $("#red_circle").css({ 'background-color':'#D3D3D3'});
             $(".leaflet-interactive[src*='red_images']").hide();
+            $(".leaflet-interactive[src*='rot']").hide();
 }
         else
         {
             $(".mission_panel_red").css({ 'display':'block'});
             $("#red_circle").css({ 'background-color':'#c9302c'});
             $(".leaflet-interactive[src*='red_images']").show();
+            $(".leaflet-interactive[src*='rot']").show();
         }
     });
 })();
