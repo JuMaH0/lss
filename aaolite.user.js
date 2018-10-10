@@ -16,45 +16,47 @@
 (function() {
 
 
-    const lf_tlf = 1; //Löschfahrzeuge oder Tanklöschfahrzeuge
-    const lf_only = 1; //Löschfahrzeuge
-    const tlf_only = 1; //Tanklöschfahrzeuge
-    const elw = 1; //Einsatzleitfahrzeuge 1
-    const elw2 = 1; //Einsatzleitfahrzeuge 2
+    // 0 = Fahrzeuge werden in der Liste ausgeblendet 1 = Fahrzeuge werden eingeblendet
 
-    const elw1_or_elw2 = 1; //ELW 1, ELW 2 oder AB-Einsatzleitung
-    const ab_einsatzleitung_only = 1; //AB-Einsatzleitung
+    const lf_tlf = 1; //Löschfahrzeuge oder Tanklöschfahrzeuge
+    const lf_only = 0; //Löschfahrzeuge
+    const tlf_only = 0; //Tanklöschfahrzeuge
+    const elw = 1; //Einsatzleitfahrzeuge 1
+    const elw2 = 0; //Einsatzleitfahrzeuge 2
+
+    const elw1_or_elw2 = 0; //ELW 1, ELW 2 oder AB-Einsatzleitung
+    const ab_einsatzleitung_only = 0; //AB-Einsatzleitung
     const elw2_or_ab_elw = 1; //ELW 2 oder AB-Einsatzleitung
     const dlk = 1; //Drehleitern
-    const dlk_or_tm50 = 1; //DLK oder TM 50
+    const dlk_or_tm50 = 0; //DLK oder TM 50
 
-    const hlf_only = 1; //HLF
-    const hlf_or_rw_and_lf = 1; //HLF oder RW und LF
-    const rw = 1; //Rüstwagen oder HLF
-    const rw_only = 1; //Rüstwagen
-    const ab_ruest = 1; //AB Rüst
+    const hlf_only = 0; //HLF
+    const hlf_or_rw_and_lf = 0; //HLF oder RW und LF
+    const rw = 0; //Rüstwagen oder HLF
+    const rw_only = 0; //Rüstwagen
+    const ab_ruest = 0; //AB Rüst
 
     const ab_ruest_rw = 1; //AB Rüst oder Rüstwagen oder HLF
     const gwa = 1; //GW-A oder AB-Atemschutz
-    const ab_atemschutz_only = 1; //AB-Atemschutz
-    const gw_atemschutz_only = 1; //GW-A
+    const ab_atemschutz_only = 0; //AB-Atemschutz
+    const gw_atemschutz_only = 0; //GW-A
     const gwoel = 1; //GW-Öl oder AB-Öl
 
-    const ab_oel_only = 1; //AB-Öl
-    const gw_oel_only = 1; //GW-Öl
+    const ab_oel_only = 0; //AB-Öl
+    const gw_oel_only = 0; //GW-Öl
     const gwl2wasser = 1; //Schlauchwagen oder AB-Schlauch
-    const gwl2wasser_only = 1; //Schlauchwagen
-    const abl2wasser_only = 1; //AB-Schlauch
+    const gwl2wasser_only = 0; //Schlauchwagen
+    const abl2wasser_only = 0; //AB-Schlauch
 
     const gwmesstechnik = 1; //GW-Messtechnik
     const gwgefahrgut = 1; //GW-Gefahrgut oder AB-Gefahrgut
-    const gw_gefahrgut_only = 1; //GW-Gefahrgut
-    const ab_gefahrgut_only = 1; //AB-Gefahrgut
+    const gw_gefahrgut_only = 0; //GW-Gefahrgut
+    const ab_gefahrgut_only = 0; //AB-Gefahrgut
     const gwhoehenrettung = 1; //GW-Höhenrettung
 
     const dekon_p = 1; //Dekon-P oder AB-Dekon-P
-    const only_dekon_p = 1; //Dekon-P
-    const only_ab_dekon_p = 1; //AB-Dekon-P
+    const only_dekon_p = 0; //Dekon-P
+    const only_ab_dekon_p = 0; //AB-Dekon-P
     const mtw = 1; //MTW
     const fwk = 1; //Feuerwehrkran
 
