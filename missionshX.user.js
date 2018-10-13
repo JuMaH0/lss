@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MissionSH
-// @version      1.7.0
+// @version      1.7.2
 // @description  Einsätze anzeigen oder ausblenden anhand der Labelfarben grün, gelb, rot
 // @author       JuMaHo & Jan (KBOE2)
 // @include      *://www.leitstellenspiel.de/
@@ -11,7 +11,9 @@
 
     const showmap = 1; // 1 = Icons auf map ausblenden 0 = Icons nicht ausblenden
     const involved = 0; //1 = beteiligt Einsätze nicht ausblenden 0 = beteiligt Einsätze ausblenden
-    const uninvolved = 1; //1 = unbeteiligt Einsätze nicht  ausblenden 0 = unbeteiligt Einsätze ausblenden
+    const uninvolved = 0; //1 = unbeteiligt Einsätze nicht  ausblenden 0 = unbeteiligt Einsätze ausblenden
+    const patients = 1; //1 Einsätze solange einblenden wie Patienten vorhanden sind 0 = Einsätze mit Patienten ausblenden
+    const recruitment = 0; //1= Einsätze einblenden wenn verstäkung benötigt wird
 
 
     var circle = 'width: 20px; height: 20px; border: 1px solid black; text-align: center; border-radius: 20px;';
@@ -45,8 +47,7 @@ var tid = setInterval(mycode, 5000);
             if (showmap === 1) {
                 $(".leaflet-interactive[src*='green_images']").hide();
                 $(".leaflet-interactive[src*='gruen']").hide();
-
-            }
+}
 
         } else {
             $(".mission_panel_green").css({'display': "block"});
@@ -92,43 +93,40 @@ var tid = setInterval(mycode, 5000);
             }
         }
        
-  var mission = $('[id^=mission_panel_heading_]');
-    var x;
-     //var mission_id = $(mission[0]).attr('id').match(/[0-9]+/);
+
+        var mission = $('[id^=mission_panel_heading_]');
+        var x;
+     
+        var mission_count = mission.length;
+  
+       for (x = 0; x < mission_count; x++) {
+       var mission_id = $(mission[x]).attr('id').match(/[0-9]+/);
 
 
-    var mission_count = mission.length;
-   // alert(mission_count);
-
-        for (x = 0; x < mission_count; x++) {
-
-            var mission_id = $(mission[x]).attr('id').match(/[0-9]+/);
+           if (patients === 1 && $('#mission_patients_'+mission_id+'').html()) {$("#mission_panel_" + mission_id + ".mission_panel_red").show();}
+           if (recruitment === 1 && $('#mission_missing_'+mission_id+'').html()) {$("#mission_panel_" + mission_id + ".mission_panel_red").show();}
 
 
-            if(uninvolved === 1){
 
-            if($( "#mission_participant_" + mission_id + "" ).hasClass( "glyphicon-user hidden" )){
+
+            if($( uninvolved === 1 && "#mission_participant_" + mission_id + "" ).hasClass( "glyphicon-user hidden" )){
+               $("#mission_panel_" + mission_id + ".mission_panel_red").show();
+                $("#mission_panel_" + mission_id + ".mission_panel_yellow").show();
+                $("#mission_panel_" + mission_id + ".mission_panel_green").show();
+                
+            }
+            
+            
+
+            if($( involved === 1 && "#mission_participant_new_" + mission_id + "" ).hasClass( "glyphicon-asterisk hidden" )){
                 $("#mission_panel_" + mission_id + ".mission_panel_red").show();
                 $("#mission_panel_" + mission_id + ".mission_panel_yellow").show();
                 $("#mission_panel_" + mission_id + ".mission_panel_green").show();
-                $(".leaflet-interactive[src*='"+ mission_id +"']").show();
-            }
-            }
-            if(involved === 1){
-
-            if($( "#mission_participant_new_" + mission_id + "" ).hasClass( "glyphicon-asterisk hidden" )){
-                $("#mission_panel_" + mission_id + ".mission_panel_red").show();
-                $("#mission_panel_" + mission_id + ".mission_panel_yellow").show();
-                $("#mission_panel_" + mission_id + ".mission_panel_green").show();
-                $(".leaflet-interactive[src*='"+ mission_id +"']").show();
-            }
-            }
-
-
-
-        }
-
+             }
+            
+       }
     }
+    
     $("#green").click(function() {
         if ($('.mission_panel_green').css('display') === 'block') {
             $(".mission_panel_green").hide(1500);
