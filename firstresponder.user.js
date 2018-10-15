@@ -13,7 +13,7 @@
 (function() {
 
 
-    var aao_button = '#aao_2520519'; //Hier ID des Buttons einfügen
+    var aao_button = '#aao_2520519'; //Hier ID des Buttons einfügen wichtig mit #
     
   $(aao_button).click(function(){
 
