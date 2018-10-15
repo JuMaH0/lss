@@ -23,7 +23,7 @@
 
         if($("#vehicle_checkbox_" + vehicle_id + "").prop('checked') === false) {
         //Es können beliebig viele IDs hinzugefügt werden -->> || vehicle_type_id === 'HIER ID'
-        if(vehicle_type_id ===  '32' || vehicle_type_id === '39'){
+        if(vehicle_type_id ===  '30' || vehicle_type_id === '32'){
             $("#vehicle_checkbox_" + vehicle_id + "").click();
         return false;
         }
