@@ -1,10 +1,9 @@
 // ==UserScript==
-// ==UserScript==
 // @name         FirstResponder
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.0.5
 // @description  Script zur Alamierung des nächstliegendes FR Fahrzeugs
-// @author       JuMaHO
+// @author       JuMaHo
 // @include      *://www.leitstellenspiel.de/
 // @include      *://www.leitstellenspiel.de/*
 // @grant        none
@@ -13,10 +12,9 @@
 (function() {
 
 
-    var aao_button = '#aao_2520519'; //Hier ID des Buttons einfügen wichtig mit #
+    var aao_button = '2520519'; //Hier ID des Buttons einfügen wichtig mit #
     
-  $(aao_button).click(function(){
-
+  $("#aao_" + aao_button).click(function(){
     $(".vehicle_checkbox").each(function(){
         var vehicle_type_id = $(this).attr("vehicle_type_id");
         var vehicle_id = $(this).attr("value");
@@ -31,3 +29,4 @@
     });
   });
 })();
+
