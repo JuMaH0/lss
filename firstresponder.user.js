@@ -12,7 +12,7 @@
 (function() {
 
 
-    var aao_button = '2520519'; //Hier ID des Buttons einfügen wichtig mit #
+    var aao_button = '2520519'; //Hier ID des Buttons einfügen
     
   $("#aao_" + aao_button).click(function(){
     $(".vehicle_checkbox").each(function(){
