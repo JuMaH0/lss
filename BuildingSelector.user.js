@@ -12,7 +12,7 @@
     var group = [ "feuerwehr", "rettung", "polizei", "thw", "wasserrettung", "schule" ];
     $.each( group, function( i, value ) {
 
- if (!$("#building_selection_" + value + "").hasClass("btn-danger")) {$( "#building_selection_" + value + "" )[0].click(); }
+ if (!$("#building_selection_" + value + "").hasClass("btn-danger")) { $( "#building_selection_" + value + "" )[0].click(); }
 
 });
 })();
