@@ -33,13 +33,13 @@
  });
 }
 
-    /*****************************************************Fahrzeug Kategorien*************************************************************/
+    /*****************************************************Fahrzeug Klasse****************************************************************/
 
-    aao(2591612,77); //Fahrzeugkategorie einem AAO Button zuweisen
+    aao(2591612,77); //Fahrzeugklasse einem AAO Button zuweisen
 
     /*************************************************Fahrzeuge hinzufügen u. anpassen***************************************************/
 
-    fz_edit(15091922,'CBRN-ErkKw',77); //Fahrzeug umbennen und kategorie zuweisen
+    fz_edit(15091922,'CBRN-ErkKw',77); //Fahrzeug umbennen und Klasse zuweisen
     
 
 })();
