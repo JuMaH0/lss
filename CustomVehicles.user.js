@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CustomVehicles
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1
+// @version      1.0.5
 // @description  Fahrzeug neue Klasse zuweisen + eigene AAO
 // @author       JuMaHo
 // @match        https://www.leitstellenspiel.de/*
@@ -9,14 +9,11 @@
 
 (function() {
 
-     function add_custom_id(vehicle_id,custom_id){
-         $('#vehicle_checkbox_' + vehicle_id + '').attr('custom_id', '' + custom_id + '');
-    }
-
-    function fz_edit(fz_id,fz_type,fz_color){
+   function fz_edit(fz_id,fz_type,custom_id){
+        $('#vehicle_checkbox_' + fz_id + '').attr('custom_id', '' + custom_id + '');
         $( "a[href$='/vehicles/" + fz_id + "']" ).next().text('(' + fz_type +')');
     if($( "a[href$='/vehicles/" + fz_id + "/edit']" ).length > 0){
-        $( "a[href$='/fahrzeugfarbe/" + fz_color + "']" ).text('' + fz_type + '');
+        $( "a[href*='fahrzeugfarbe']" ).text('' + fz_type + '');
     }
 }
 
@@ -35,10 +32,14 @@
     });
  });
 }
-    /************************************************************************************************************************************/
-    aao(2582256,54321); //Fahrzeugkategorie einem AAO Button zuweisen --> pro Kategorien nur 1 AAO anlegen
-    add_custom_id(12645389,54321); //Fahrzeug eine neuen Unterkategorie zuweisen
-    fz_edit(12645389,'GW-Tier',30); //Fahrzeugkennung in Einsatzliste und Wache anpassen
-   /************************************************************************************************************************************/
-  
+
+    /*****************************************************Fahrzeug Kategorien*************************************************************/
+
+    aao(2591612,77); //Fahrzeugkategorie einem AAO Button zuweisen
+
+    /*************************************************Fahrzeuge hinzufügen u. anpassen***************************************************/
+
+    fz_edit(15091922,'CBRN-ErkKw',77); //Fahrzeug umbennen und kategorie zuweisen
+    
+
 })();
