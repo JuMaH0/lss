@@ -44,23 +44,13 @@
  });
 }
 
-<<<<<<< HEAD
    
   /*************************************************Fahrzeuge hinzufügen u. anpassen***************************************************/
-=======
-   /*****************************************************Fahrzeug Klasse****************************************************************/
->>>>>>> 7b19b3cbb34ea2d73dba417815ad854424d77019
 
     fz_edit(15091922,'CBRN-ErkKw',77); //Fahrzeug umbennen und Klasse zuweisen
 
-<<<<<<< HEAD
  /*****************************************************Fahrzeug Klasse****************************************************************/
 
     aao(2591612,77,'#FA58F4'); //Optional, Fahrzeugklasse einer AAO-Button zuweisen und Farbe mittels HEX Wert anpassen
-=======
-   /*************************************************Fahrzeuge hinzufügen u. anpassen***************************************************/
-
-    fz_edit(15091922,'CBRN-ErkKw',77); //Fahrzeug umbennen und Klasse zuweisen
->>>>>>> 7b19b3cbb34ea2d73dba417815ad854424d77019
 
 })();
