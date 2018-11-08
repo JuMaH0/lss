@@ -1,56 +1,10 @@
 // ==UserScript==
 // @name         CustomVehicles
 // @namespace    http://tampermonkey.net/
-// @version      1.0.6
+// @version      2.0.4
 // @description  Fahrzeug neue Klasse zuweisen + eigene AAO
 // @author       JuMaHo
 // @match        https://www.leitstellenspiel.de/*
 // ==/UserScript==
 
-(function() {
-
-    jQuery.extend( jQuery.fn, {
-    hasParent: function(p) {
-       return this.filter(function(){
-           return $(p).find(this).length;
-        });
-    }
-});
-
-
-    function fz_edit(fz_id,fz_type,custom_id){
-       $('#vehicle_checkbox_' + fz_id + '').attr('custom_id', '' + custom_id + '');
-       $( "a[href$='/vehicles/" + fz_id + "']" ).hasParent(".tablesorter").next().text('(' + fz_type +')');
-       if($( "a[href$='/vehicles/" + fz_id + "/edit']" ).length > 0){
-       $( "a[href*='fahrzeugfarbe']" ).text('' + fz_type + '');
-           return false;
-    }
-}
-
-    function aao(aao_id,custom_id,hex){
-        $( "input[custom_id='" + custom_id + "']" ).parent("td").css( "background-color", "" + hex + "" );
-        $("#aao_" + aao_id + "").click(function(){
-        $(".vehicle_checkbox").each(function(){
-        var vehicle_checkid = $(this).attr("custom_id");
-        var vehicle_id = $(this).attr("value");
-
-        if($("#vehicle_checkbox_" + vehicle_id + "").prop('checked') === false) {
-        if(vehicle_checkid === '' + custom_id + ''){
-            $("#vehicle_checkbox_" + vehicle_id + "").click();
-            return false;
-         }
-       }
-    });
- });
-}
-
-   
-  /*************************************************Fahrzeuge hinzufügen u. anpassen***************************************************/
-
-    fz_edit(15091922,'CBRN-ErkKw',77); //Fahrzeug umbennen und Klasse zuweisen
-
- /*****************************************************Fahrzeug Klasse****************************************************************/
-
-    aao(2591612,77,'#FA58F4'); //Optional, Fahrzeugklasse einer AAO-Button zuweisen und Farbe mittels HEX Wert anpassen
-
-})();
+!function(){jQuery.extend(jQuery.fn,{hasParent:function(e){return this.filter(function(){return $(e).find(this).length})}});var e=window.location.href.replace(/[^\dab]/g,""),t=localStorage.getItem("cvname_"+e),a=localStorage.getItem("cvkid_"+e);null===t&&(t=""),null===a&&(a=""),$(".vehicle_working_hour_end").append('<div class="col-sm-3 control-label" style="margin-top:15px"><label class="select optional">Alternative Fahrzeugklasse</label></div><div class="col-sm-9"  style="margin-top:15px"><input class="string required form-control" type="text" name="cvname" id="rtl" value="'+t+'" /></div></div>'),$(".vehicle_working_hour_end").append('<div class="col-sm-3 control-label" style="margin-top:15px"><label class="select optional">FahrzeugklassenID</label></div><div class="col-sm-9"  style="margin-top:15px"><input class="string required form-control" type="text" name="cvkid" id="rtl" value="'+a+'" /><input class="btn btn btn-success" style="margin-top:15px" id="custom" type="submit" value="Fahrzeugklasse ändern"><button type="button" class="btn btn-warning" style="margin-top: 15px; margin-left:5px;" data-toggle="modal" data-target="#exampleModalCenter">KlassenID bearbeiten</button><button type="button" id="cvdel" class="btn btn-danger" style="margin-top: 15px; margin-left:5px;">Klasse zurücksetzen</button><div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="exampleModalLongTitle">Klasse bearbeiten</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body">KlassenID<input type="text" class="form-control" name="cvkkid"><br>KlassenAAO<input type="text" class="form-control" name="cvkaao"><br>Klassenfarbe<br><input type="color" name="cvkc" value="#FF0000"><br></div><div class="modal-footer"><button type="button" id="customkid" class="btn btn-secondary" data-dismiss="modal">speichern</button></div></div></div></div></div></div>'),$("#customkid").click(function(){var e=$("input[name=cvkkid]").val(),t=$("input[name=cvkc]").val(),a=$("input[name=cvkaao]").val();localStorage.setItem("cvkkid_"+e,""+e),localStorage.setItem("cvkc_"+e,""+t),localStorage.setItem("cvkkaao_aao_"+a,""+e),alert("Änderung erfolgreich!")}),$("#custom").click(function(){var t=$("input[name=cvname]").val(),a=$("input[name=cvkid]").val();localStorage.setItem("cvname_"+e,""+t),localStorage.setItem("cvid_"+e,""+e),localStorage.setItem("cvkid_"+e,""+a),alert("Änderung erfolgreich!")}),$("#cvdel").click(function(){localStorage.removeItem("cvname_"+e),localStorage.removeItem("cvid_"+e),localStorage.removeItem("cvkid_"+e),alert("Klasse zurückgesetzt!"),location.reload()});var l=localStorage.getItem("cvname_"+e);if($("a[href$='/vehicles/"+e+"/edit']").length>0&&null!=l&&0!=l)return $("a[href*='fahrzeugfarbe']").text(""+l),!1;var o=$("a[href*='vehicles']").hasParent(".tablesorter");$.each(o,function(e,t){var a=$(t).attr("href").split("/").pop().replace(/\?.*/,""),l=localStorage.getItem("cvname_"+a),o=localStorage.getItem("cvid_"+a);localStorage.getItem("cvkat_"+a);0!=l&&$("a[href$='/vehicles/"+o+"']").hasParent(".tablesorter").next().text("("+l+")")});var c=$(".vehicle_checkbox");$.each(c,function(){var e=localStorage.getItem("cvkid_"+$(this).attr("value"));$("#vehicle_checkbox_"+$(this).attr("value")).attr("custom_id",""+e);var t=localStorage.getItem("cvkc_"+$(this).attr("custom_id"));$("input[custom_id='"+e+"']").parent("td").css("background-color",""+t)}),$(".aao").each(function(){var e=$(this).attr("id");$("#"+e).click(function(){var t=localStorage.getItem("cvkkaao_"+e);$(".vehicle_checkbox").each(function(){var e=$(this).attr("custom_id"),a=$(this).attr("value");if(!1===$("#vehicle_checkbox_"+a).prop("checked")&&e===""+t&&null!=t)return $("#vehicle_checkbox_"+a).click(),!1})})})}();
