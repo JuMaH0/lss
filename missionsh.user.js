@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MissionSH
-// @version      2.0
+// @version      2.0.1
 // @description  Einsätze anzeigen oder ausblenden anhand der Labelfarben grün, gelb, rot
 // @author       JuMaHo
 // @include      *://www.leitstellenspiel.de/
@@ -83,7 +83,7 @@
         </div>
         <div class="modal-footer">
 
-            <button type="submit" id="savemissionsh" class="btn btn-success" >Speicher</button>
+            <button type="submit" id="savemissionsh" class="btn btn-success" >Speichern</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
 
         </div>
@@ -92,7 +92,7 @@
 
     $("#navbar_profile_link")
         .parent()
-        .after(`<li role="presentation"><a style="cursor:pointer" id="MissionSh" data-toggle="modal" data-target="#missionshModal"><img class="icon icons8-Share" src="https://www.iconsdb.com/icons/preview/white/eye-3-xxl.png" width="24" height="24"> MissionSH</a></li>`);
+        .after(`<li role="presentation"><a style="cursor:pointer" id="MissionSh" data-toggle="modal" data-target="#missionshModal"><img class="icon icons8-Share" src="https://imagizer.imageshack.com/img922/730/GRFYDq.png" width="24" height="24"> MissionSH</a></li>`);
 
      $("body").on("click", "#savemissionsh", function(){
         var save = {};
