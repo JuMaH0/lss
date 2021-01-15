@@ -1,22 +1,21 @@
 // ==UserScript==
 // @name         MissionSH
-// @version      1.8
+// @version      1.8.1
 // @description  Einsätze anzeigen oder ausblenden anhand der Labelfarben grün, gelb, rot
 // @author       JuMaHo
 // @include      *://www.leitstellenspiel.de/
 // @grant        none
-// @namespace    https://github.com/JuMaH0/lss/raw/master/missionsh.user.js
+// @namespace      https://github.com/JuMaH0/lss/raw/master/missionsh.user.js
 // ==/UserScript==
-
 (function() {
 
     const showmap = 1; // 1 = Icons auf map ausblenden 0 = Icons nicht ausblenden
     const involved = 0; //1 = beteiligt Einsätze nicht ausblenden 0 = beteiligt Einsätze ausblenden
     const uninvolved = 0; //1 = unbeteiligt Einsätze nicht  ausblenden 0 = unbeteiligt Einsätze ausblenden
     const patients = 0; //1 Einsätze solange einblenden wie Patienten vorhanden sind 0 = Einsätze mit Patienten ausblenden
-    const recruitment = 1; //1= Einsätze einblenden wenn verstäkung benötigt wird
+    const recruitment = 1; //1 = Einsätze einblenden wenn verstäkung benötigt wird
+    const radio = 1; //1 = Einsätze mit Sprechwunsch immer anzeigen
 
-////////////////////////////////////////////////////////////AB HIER NICHTS MEHR ÄNDERN //////////////////////////////////////////////////
 
     var circle = 'width: 20px; height: 20px; border: 1px solid black; text-align: center; border-radius: 20px;';
     $(".navbar-right").append('<li><a id="green"><div id="green_circle" style="background-color: #32cd32;' + circle + '"></div></a></li>');
@@ -66,8 +65,8 @@ var tid = setInterval(mycode, 5000);
         if (status_yellow === 'rgb(211, 211, 211)') {
            $(".mission_panel_yellow").css({'display': 'none'})
             if (showmap === 1) {
-                $(".leaflet-interactive[src*='yellow_images']").css({'display': 'block'});
-                $(".leaflet-interactive[src*='gelb']").css({'display': 'block'});
+                $(".leaflet-interactive[src*='yellow_images']").css({'display': 'none'});
+                $(".leaflet-interactive[src*='gelb']").css({'display': 'none'});
 
             }
 
@@ -113,6 +112,14 @@ var tid = setInterval(mycode, 5000);
            if (recruitment === 1 && $('#mission_missing_'+mission_id+'').html()){$("#mission_panel_" + mission_id + ".mission_panel_red").css({'display': 'block'});}
 
 
+
+
+           if($( radio === 1 && "#mission_missing_short_" + mission_id + "" ).html()){
+                $("#mission_panel_" + mission_id + ".mission_panel_red").css({'display': 'block'});
+                $("#mission_panel_" + mission_id + ".mission_panel_yellow").css({'display': 'block'});
+                $("#mission_panel_" + mission_id + ".mission_panel_green").css({'display': 'block'});
+
+            }
 
 
 
