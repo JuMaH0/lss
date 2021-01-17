@@ -3,7 +3,7 @@
 // @version      0.1
 // @description  Ausblenden der Einsätze im Fullsize Modus (Script MissionSH wird benötigt)
 // @author       JuMaHo
-// @include      *://www.leitstellenspiel.de/*
+// @include      *://www.leitstellenspiel.de/?mapview=true
 // @grant        none
 // @namespace      
 // ==/UserScript==
