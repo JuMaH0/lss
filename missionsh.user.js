@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MissionSH
-// @version      2.0.1
+// @version      2.0.2
 // @description  Einsätze anzeigen oder ausblenden anhand der Labelfarben grün, gelb, rot
 // @author       JuMaHo
 // @include      *://www.leitstellenspiel.de/
@@ -154,6 +154,7 @@ var tid = setInterval(mycode, 5000);
             if (showmapchecked === 1) {
                 $(".leaflet-interactive[src*='green_images']").css({'display': 'none'})
                 $(".leaflet-interactive[src*='gruen']").css({'display': 'none'})
+		    localStorage.greenleaflet = 'none';
 }
 
         } else {
@@ -161,6 +162,7 @@ var tid = setInterval(mycode, 5000);
             if (showmapchecked === 1) {
                 $(".leaflet-interactive[src*='green_images']").css({'display': 'block'});
                 $(".leaflet-interactive[src*='gruen']").css({'display': 'block'});
+		    localStorage.greenleaflet = 'block';
 
             }
         }
@@ -170,6 +172,7 @@ var tid = setInterval(mycode, 5000);
             if (showmapchecked === 1) {
                 $(".leaflet-interactive[src*='yellow_images']").css({'display': 'none'});
                 $(".leaflet-interactive[src*='gelb']").css({'display': 'none'});
+		    localStorage.yellowleaflet = 'none';
 
             }
 
@@ -179,6 +182,7 @@ var tid = setInterval(mycode, 5000);
             if (showmapchecked === 1) {
                 $(".leaflet-interactive[src*='yellow_images']").css({'display': 'block'});
                 $(".leaflet-interactive[src*='gelb']").css({'display': 'block'});
+		    localStorage.yellowleaflet = 'block';
 
             }
         }
@@ -189,6 +193,7 @@ var tid = setInterval(mycode, 5000);
             if (showmapchecked === 1) {
                 $(".leaflet-interactive[src*='red_images']").css({'display': 'none'})
                 $(".leaflet-interactive[src*='rot']").css({'display': 'none'})
+		    localStorage.redleaflet = 'none';
                  }
 
 		} else {
@@ -197,6 +202,7 @@ var tid = setInterval(mycode, 5000);
             if (showmapchecked === 1) {
                 $(".leaflet-interactive[src*='red_images']").css({'display': 'block'});
                 $(".leaflet-interactive[src*='rot']").css({'display': 'block'});
+		    localStorage.yellowleaflet = 'block';
             }
         }
 
