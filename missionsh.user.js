@@ -1,29 +1,29 @@
 // ==UserScript==
 // @name         MissionSH
-// @version      2.0.4
+// @version      2.0.5
 // @description  Einsätze anzeigen oder ausblenden anhand der Labelfarben grün, gelb, rot
 // @author       JuMaHo
 // @include      *://www.leitstellenspiel.de/
 // @grant        none
-// @namespace      https://github.com/JuMaH0/lss/raw/master/missionsh.user.js
+// @namespace    https://github.com/JuMaH0/lss/raw/master/missionsh.user.js
 // ==/UserScript==
 (function(){if(localStorage.getItem('missionshshowmap')==='true'){var showmapchecked='checked'};if(localStorage.getItem('missionshinvolved')==='true'){var involvedchecked='checked'};if(localStorage.getItem('missionshuninvolved')==='true'){var uninvolvedchecked='checked'};if(localStorage.getItem('missionshpatients')==='true'){var patientschecked='checked'};if(localStorage.getItem('missionshparamedic')==='true'){var paramedicchecked='checked'};if(localStorage.getItem('missionshrecruitment')==='true'){var recruitmentchecked='checked'};if(localStorage.getItem('missionshradio')==='true'){var radiochecked='checked'};if(localStorage.getItem('missionshminimize')==='true'){var minimizechecked='checked'};$("body").prepend(`
 
 <div class="modal fade" id="missionshModal" tabindex="-1" role="dialog" aria-labelledby="missionshModalLabel" aria-hidden="true">
 
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-dialog-centered" role="document">
 
-   <div class="modal-content">
+   <div class="modal-content" style="margin-top: 80px;">
 
     <form id="role-form"  method="get">
 
-        <div class="modal-header">
+        <div class="modal-header" style="border-bottom: 0px;">
 
             <button type="button" class="close" data-dismiss="modal">&times;</button>
 
 
 
-            <h4 class="modal-title">MissionSH Einstellungen</h4>
+            <h4 class="modal-title"></h4>
 
         </div>
 
@@ -131,7 +131,7 @@
 
                 <input class="form-check-input" type="checkbox" value="" id="cbxminimize" ${minimizechecked}>
 
-                <label class="form-check-label" for="ccbxminimize"> Einsatzliste  minimalisieren (<a href="http://google.de">Script MinimizeSH benötigt</a>)
+                <label class="form-check-label" for="ccbxminimize"> Einsatzliste  minimalisieren ( <a href="https://github.com/JuMaH0/lss/raw/master/minimizesh.user.js">Script MinimizeSH benötigt</a> )
 
             </div>
 
@@ -151,7 +151,7 @@
 
             <button type="submit" id="savemissionsh" class="btn btn-success" >Speichern</button>
 
-            <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Abbrechen</button>
 
 
 
@@ -187,3 +187,7 @@ $(".leaflet-interactive[src*='rot']").css({'display':'none'})
 localStorage.redleaflet='none';}}else{$(".mission_panel_red").css({'display':'block'});$("#red_circle").css({'background-color':'#c9302c'});$(".leaflet-interactive[src*='red_images']").css({'display':'block'})
 $(".leaflet-interactive[src*='rot']").css({'display':'block'})
 localStorage.redleaflet='block';}});})();
+
+
+
+
