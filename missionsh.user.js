@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MissionSH
-// @version      2.0.5
+// @version      2.0.6
 // @description  Einsätze anzeigen oder ausblenden anhand der Labelfarben grün, gelb, rot
 // @author       JuMaHo
 // @include      *://www.leitstellenspiel.de/
@@ -9,7 +9,7 @@
 // ==/UserScript==
 (function(){if(localStorage.getItem('missionshshowmap')==='true'){var showmapchecked='checked'};if(localStorage.getItem('missionshinvolved')==='true'){var involvedchecked='checked'};if(localStorage.getItem('missionshuninvolved')==='true'){var uninvolvedchecked='checked'};if(localStorage.getItem('missionshpatients')==='true'){var patientschecked='checked'};if(localStorage.getItem('missionshparamedic')==='true'){var paramedicchecked='checked'};if(localStorage.getItem('missionshrecruitment')==='true'){var recruitmentchecked='checked'};if(localStorage.getItem('missionshradio')==='true'){var radiochecked='checked'};if(localStorage.getItem('missionshminimize')==='true'){var minimizechecked='checked'};$("body").prepend(`
 
-<div class="modal fade" id="missionshModal" tabindex="-1" role="dialog" aria-labelledby="missionshModalLabel" aria-hidden="true">
+<div class="modal fade" id="missionshModal" tabindex="-1" role="dialog" aria-labelledby="missionshModalLabel" aria-hidden="true" style="z-index: 9999;">
 
   <div class="modal-dialog modal-dialog-centered" role="document">
 
