@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         RenameMission
-// @version      0.0.1
+// @version      0.0.2
 // @description  Einsätze umbennen
 // @author       JuMaHo
 // @include      *://www.leitstellenspiel.de/*
@@ -34,9 +34,11 @@
     document.getElementById("missionH1").innerHTML = "" + z + "";
 
     $("#missionH1").click(function () {
-        var rename = prompt("Einsatz anlegen");
+        var rename = prompt("Einsatz anlegen",""+z+"");
 
         window.rename
+
+        if(rename === null){rename = z}
 
         sessionStorage.setItem('' + missionid + '', '' + rename + '');
 
