@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Projekt X
-// @version      0.2
+// @version      0.3
 // @description  More detailed mission description
 // @author       JuMaHo
 // @match        https://www.leitstellenspiel.de/missions/*
@@ -10,7 +10,7 @@
 (function () {
     'use strict';
 
-    $('<div id="missiondetails" style="background-color: #e89a0b; margin-bottom: 10px; padding: 5px;"></div>').prependTo('#col_left');
+    $('<div id="missiondetails" style="background-color: #e89a0b; margin-bottom: 10px; padding: 5px; display: none;"></div>').prependTo('#col_left');
     var div = document.getElementById('missiondetails');
 
     var mission = $('#mission_help').attr('href').split("/").pop().replace(/\?.*/, '');
@@ -29,7 +29,11 @@
     var addressa = addressx[0];
     var addressb = addressx[1].replace(/\d+/g, '');
 
-    if (mission === '476') {
+    var missionarray = ['476'];
+    var missioncheck = missionarray.includes('' + mission + '');
+
+    if (missioncheck === true) {
+        $('#missiondetails').css('display', 'block');
         div.innerHTML += '' + gender + ' ' + name + ' hier, schicken Sie schnell jemanden in die ' + addressa + ' nach ' + addressb + ', ' + mission476 + '';
     }
 })();
