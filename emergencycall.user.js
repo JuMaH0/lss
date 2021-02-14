@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         EmergencyCall
-// @version      0.0.8
+// @version      0.0.9
 // @description  dieses Script generiert eine zufällige Einsatzmeldung
 // @author       JuMaHo
 // @match        https://www.leitstellenspiel.de/missions/*
@@ -29,6 +29,9 @@
     var array145 = ['hier fährt einer Schlangenlinie, ich glaub der ist besoffen', 'da fährt jemand total besoffen mit dem Auto'];
     var xmission145 = array145[Math.floor(Math.random() * array145.length)];
 
+    var array164 = ['mein Kind ist auf den Kopf gefallen und blutet nun stark.'];
+    var xmission164 = array164[Math.floor(Math.random() * array164.length)];
+
     var array476 = ['hier wurde ein Fahhradfahrer angefahren', 'hier liegt ein Fahrradfahrer auf der Straße', 'ich habe einen Fahrradfahrer angefahren', 'hier wurde ein Radfahrer umgemäht'];
     var xmission476 = array476[Math.floor(Math.random() * array476.length)];
 
@@ -43,8 +46,10 @@
             div.innerHTML += 'Brandmeldeanlage aufgelaufen';
             return;
         }
-        if (mission === '145')
+            if (mission === '145')
             emergency_call(message_main, xmission145)
+            if (mission === '164')
+            emergency_call(message_main, xmission164)
             if (mission === '476')
             emergency_call(message_main, xmission476)
     }
