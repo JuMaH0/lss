@@ -22,18 +22,29 @@
     var namearray = ['Meier', 'Müller', 'Schmitt'];
     var name = namearray[Math.floor(Math.random() * namearray.length)];
 
+    var messagearray = ['bitte kommen Sie in die', 'bitte schicken sie jemanden in die', 'kommen Sie schnell zur'];
+    var message = messagearray[Math.floor(Math.random() * messagearray.length)];
+
+
+    var array145 = ['hier fährt einer Schlangenlinie, ich glaub der ist besoffen', 'da fährt jemand total besoffen mit dem Auto'];
+    var xmission145 = array145[Math.floor(Math.random() * array145.length)];
+
     var array476 = ['hier wurde ein Fahhradfahrer angefahren', 'hier liegt ein Fahrradfahrer auf der Straße', 'ich habe einen Fahrradfahrer angefahren', 'hier wurde ein Radfahrer umgemäht'];
-    var mission476 = array476[Math.floor(Math.random() * array476.length)];
+    var xmission476 = array476[Math.floor(Math.random() * array476.length)];
+
 
     var addressx = address.split(",");
     var addressa = addressx[0];
     var addressb = addressx[1].replace(/\d+/g, '');
 
-    var missionarray = ['476'];
-    var missioncheck = missionarray.includes('' + mission + '');
-
-    if (missioncheck === true) {
+    function emergency_call(xmissionx){
         $('#missiondetails').css('display', 'block');
-        div.innerHTML += '' + gender + ' ' + name + ' hier, schicken Sie schnell jemanden in die ' + addressa + ' nach ' + addressb + ', ' + mission476 + '';
+        div.innerHTML += '' + gender + ' ' + name + ' hier, '+message+' ' + addressa + ' nach ' + addressb + ', ' + xmissionx+ '';
     }
+
+
+    if(mission === '145')emergency_call(xmission145)
+    if(mission === '476')emergency_call(xmission476)
+
+
 })();
