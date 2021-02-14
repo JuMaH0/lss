@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Projekt X
-// @version      0.3
+// @version      0.4
 // @description  More detailed mission description
 // @author       JuMaHo
 // @match        https://www.leitstellenspiel.de/missions/*
@@ -22,8 +22,9 @@
     var namearray = ['Meier', 'Müller', 'Schmitt'];
     var name = namearray[Math.floor(Math.random() * namearray.length)];
 
-    var messagearray = ['bitte kommen Sie in die', 'bitte schicken sie jemanden in die', 'kommen Sie schnell zur'];
-    var message = messagearray[Math.floor(Math.random() * messagearray.length)];
+    var message_mainarray = ['bitte kommen Sie in die', 'bitte schicken sie jemanden in die', 'kommen Sie schnell zur'];
+    var message_main = message_mainarray[Math.floor(Math.random() * message_mainarray.length)];
+
 
 
     var array145 = ['hier fährt einer Schlangenlinie, ich glaub der ist besoffen', 'da fährt jemand total besoffen mit dem Auto'];
@@ -33,18 +34,21 @@
     var xmission476 = array476[Math.floor(Math.random() * array476.length)];
 
 
+
     var addressx = address.split(",");
     var addressa = addressx[0];
     var addressb = addressx[1].replace(/\d+/g, '');
 
-    function emergency_call(xmissionx){
+    function emergency_call(message, xmissionx) {
         $('#missiondetails').css('display', 'block');
-        div.innerHTML += '' + gender + ' ' + name + ' hier, '+message+' ' + addressa + ' nach ' + addressb + ', ' + xmissionx+ '';
+        div.innerHTML += '' + gender + ' ' + name + ' hier, ' + message + ' ' + addressa + ' nach ' + addressb + ', ' + xmissionx + '';
     }
 
-
-    if(mission === '145')emergency_call(xmission145)
-    if(mission === '476')emergency_call(xmission476)
-
+    if ($(".glyphicon-user").length <= 0) {
+        if (mission === '145')
+        emergency_call(message_main, xmission145)
+        if (mission === '476')
+        emergency_call(message_main, xmission476)
+    }
 
 })();
