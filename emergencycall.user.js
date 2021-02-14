@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         EmergencyCall
-// @version      0.0.7
+// @version      0.0.8
 // @description  dieses Script generiert eine zufällige Einsatzmeldung
 // @author       JuMaHo
 // @match        https://www.leitstellenspiel.de/missions/*
@@ -20,7 +20,7 @@
     var genderarray = ['', 'Herr', 'Frau'];
     var gender = genderarray[Math.floor(Math.random() * genderarray.length)];
 
-    var namearray = ['Meier', 'Müller', 'Schmitt'];
+    var namearray = ['Meier', 'Müller', 'Schmitt', 'Wagner', 'Richter', 'Schneider', 'Werner', 'Jung'];
     var name = namearray[Math.floor(Math.random() * namearray.length)];
 
     var message_mainarray = ['bitte kommen Sie schnell', 'bitte schicken Sie jemanden vorbei', 'wir brauchen hilfe'];
