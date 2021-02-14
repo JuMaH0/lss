@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         EmergencyCall
-// @version      0.0.6
+// @version      0.0.7
 // @description  dieses Script generiert eine zufällige Einsatzmeldung
 // @author       JuMaHo
 // @match        https://www.leitstellenspiel.de/missions/*
@@ -11,7 +11,7 @@
 (function () {
     'use strict';
     
-    $('<div id="missiondetails" style="background-color: #e89a0b; margin-bottom: 10px; padding: 5px; display: none; border: 1px solid #000;"></div>').prependTo('#col_left');
+    $('<div id="missiondetails" style="background-color: #e89a0b; margin-bottom: 10px; padding: 5px; display: none; border: 1px solid #000; font-size: 15px;"></div>').prependTo('#col_left');
     var div = document.getElementById('missiondetails');
 
     var mission = $('#mission_help').attr('href').split("/").pop().replace(/\?.*/, '');
