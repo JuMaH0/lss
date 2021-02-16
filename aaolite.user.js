@@ -1,14 +1,9 @@
 // ==UserScript==
 // @name         AAO Config Lite
-// @version      1.1
+// @version      1.2
 // @description  AAO Config Lite
 // @author       JuMaHo & Jan (KBOE2)
-// @include      *://www.leitstellenspiel.de/
-// @include      *://www.leitstellenspiel.de/*
-// @include      *://www.leitstellenspiel.de/leitstellenansicht
-// @include      *://www.leitstellenspiel.de/leitstellenansicht*
-// @exclude      *://www.leitstellenspiel.de/alliance_threads*
-// @exclude      *://www.leitstellenspiel.de/alliance_messages*
+// @include      *://www.leitstellenspiel.de/aaos/*
 // @grant        none
 // ==/UserScript==
 (function() {
