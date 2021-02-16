@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         EmergencyCall
-// @version      0.0.9
+// @version      0.0.10
 // @description  dieses Script generiert eine zufällige Einsatzmeldung
 // @author       JuMaHo
 // @match        https://www.leitstellenspiel.de/missions/*
@@ -14,7 +14,7 @@
     $.getJSON(github_link, function (data) {
         var mission = $('#mission_help').attr('href').split("/").pop().replace(/\?.*/, '');
         var checkbma = document.getElementById("missionH1").innerHTML;
-       
+
         for (var i = 0; i < data.mission.length; i++) {
             if (mission === data.mission[i].mission_id) {
                 var emergency_txt = data.mission[i].mission_text;
@@ -29,10 +29,12 @@
         var emergency_textarray = emergency_txt;
         var emergency_text = emergency_textarray[Math.floor(Math.random() * emergency_textarray.length)];
         function emergency_call(xmissionx) {
-            $('#missiondetails').css('display', 'block');
-            div.innerHTML += '' + gender + ' ' + name + ' hier, ' + xmissionx + '';
+            if ($(".glyphicon-user").length <= 0) {
+                $('#missiondetails').css('display', 'block');
+                div.innerHTML += '' + gender + ' ' + name + ' hier, ' + xmissionx + '';
+            }
         }
-         if ($(".glyphicon-user").length <= 0) {
+        if ($(".glyphicon-user").length <= 0) {
             if (checkbma.includes('(Brandmeldeanlage)')) {
                 $('#missiondetails').css('display', 'block');
                 div.innerHTML += 'Brandmeldeanlage aufgelaufen';
