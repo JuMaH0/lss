@@ -80,6 +80,10 @@
         sek_mtf: 1, // SEK-Mannschaft
         mek_zf: 1, // MEK-Zivil
         mek_mtf: 1, // MEK-Mannschaft
+        k9: 1, // Diensthundeführerkraftwagen
+        police_motorcycle: 1, // Polizeimotorrad
+        fustw_or_police_motorcycle: 1, // Funkstreifenwagen oder Polizeimotorrad
+        helicopter_bucket: 1, // Außenlastbehälter (allgemein)
         // THW
         gkw: 1, // GKW
         thw_mtw: 1, // MTW-TZ
