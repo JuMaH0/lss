@@ -20,7 +20,6 @@
         for (var i = 0; i < show_patient.length; i++) {
 
             show_patient[i].style.display = 'none'
-
         };
     }
 
@@ -36,9 +35,7 @@
             document.getElementById('show_patient').innerHTML = 'Patienten anzeigen';
         }
         for (var i = 0; i < show_patient.length; i++) {
-
             show_patient[i].style.display = '' + display + ''
-
         };
     });
 })();
