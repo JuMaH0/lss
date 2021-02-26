@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MinimizeSH
-// @version      0.0.7
+// @version      0.0.8
 // @description  Einsatzliste anhand der vorgabe von MissionSH minimalisieren
 // @author       JuMaHo
 // @include      *://www.leitstellenspiel.de/
