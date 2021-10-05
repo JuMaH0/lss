@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         AAO Config Lite
-// @version      1.2
+// @version      1.4
 // @description  AAO Config Lite
 // @author       JuMaHo & Jan (KBOE2)
 // @include      *://www.leitstellenspiel.de/aaos/*
@@ -15,7 +15,9 @@
         tlf_only : 0, // Tanklöschfahrzeuge
         wasser_amount : 1, // Liter Wasser
         wasser_amount_tlf : 1, // Liter Wasser - Nur TLF
-        elw : 1, // Einsatzleitfahrzeuge 1
+        water_damage_pump_value : 1, // Pumpenleistung
+        water_damage_pump_value_only_pumps : 1, // Pumpenleistung - Nur Schmutzwasserpumpen
+        elw : 0, // Einsatzleitfahrzeuge 1
         elw2 : 0, // Einsatzleitfahrzeuge 2
         elw1_or_elw2 : 0, // ELW 1, ELW 2 oder AB-Einsatzleitung
         ab_einsatzleitung_only : 0, // AB-Einsatzleitung
@@ -37,6 +39,7 @@
         gwl2wasser : 1, // Schlauchwagen oder AB-Schlauch
         gwl2wasser_only : 0, // Schlauchwagen
         abl2wasser_only : 0, // AB-Schlauch
+        gwl2wasser_all : 1, //Schlauchwagen alle
         gwmesstechnik : 1, // GW-Messtechnik
         gwgefahrgut : 1, // GW-Gefahrgut oder AB-Gefahrgut
         gw_gefahrgut_only : 0, // GW-Gefahrgut
@@ -60,9 +63,11 @@
         nef: 1, // NEF oder RTH
         rth_only: 1, // RTH
         nef_only: 1, // NEF
-        naw: 1, // NAW
-        naw_or_rtw_and_nef: 1, // NAW oder NEF+RTW
-        naw_or_rtw_and_nef_or_rth: 1, // NAW oder NEF/RTH+RTW
+        "vehicle_type_ids[74]" : 0, // NAW
+        "vehicle_type_ids[97]" : 0, // ITW
+        naw: 0, // NAW oder ITW
+        naw_or_rtw_and_nef: 1, // NAW oder ITW oder NEF+RTW
+        naw_or_rtw_and_nef_or_rth: 0, // NAW oder ITW oder NEF/RTH+RTW
         kdow_lna: 1, // KdoW-LNA
         kdow_orgl: 1, // KdoW-OrgL
         grtw: 1, // GRTW
@@ -84,6 +89,7 @@
         police_motorcycle: 1, // Polizeimotorrad
         fustw_or_police_motorcycle: 1, // Funkstreifenwagen oder Polizeimotorrad
         helicopter_bucket: 1, // Außenlastbehälter (allgemein)
+        "vehicle_type_ids[98]": 1, //Zivilstreifenwagen
         // THW
         gkw: 1, // GKW
         thw_mtw: 1, // MTW-TZ
@@ -99,10 +105,14 @@
         thw_anh_mzb: 1, // Anh MzB
         thw_lkw_7_lkr_19_tm: 1, // LKW 7 Lkr 19 tm
         rescue_dogs_thw: 1, // Anhänger Hundetransport
+        pump: 1,//Schmutzwasserpumpen
+        water_damage_pump: 1,//Feuerlöschpumpen
+        "vehicle_type_ids[101]": 1,//Anh SwPu
+        "vehicle_type_ids[102]": 1,//Anh 7
         // SEG
         ktw_b: 1, // KTW Typ B
         seg_elw: 1, // ELW 1 (SEG)
-        seg_gw_san: 1, // GW-San
+        gw_san: 1, // GW-San
         rescue_dogs_seg: 1, // Rettungshundefahrzeug
         // Wasserrettung
         gw_taucher: 1, // GW-Taucher
@@ -110,10 +120,10 @@
         boot: 1, // Boote (Allgemein)
         mzb: 1, // Mehrzweckboot
         // Rettungshundestaffel
-        rescue_dogs: 1 // Anhänger Hundetransport oder Rettungshundefahrzeug
+        rescue_dogs: 1, // Anhänger Hundetransport oder Rettungshundefahrzeug
+        // eigene Fahrzeugklassen
+        "vehicle_type_caption[PolVerband]": 0
     }
+Object.entries(aaos).forEach(([key, show]) => !show && document.querySelectorAll(`[for="aao_${key}"]`).forEach(el => el.parentElement.parentElement.classList.add('hidden')));
 
-    $.each(aaos, function(key, value) {
-        return value === 0 ? $('.aao_' + key).hide() : null;
-    });
 })();
